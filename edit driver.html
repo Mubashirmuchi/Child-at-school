@@ -1,0 +1,72 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/admin_edit_driver_post">
+<h3 align="center"> EDIT DRIVER  </h3>
+<div align="center">
+  <table class=" table table-bordered " width="314" border="1">
+    <tr>
+        <td width="174">Name</td>
+        <input type="hidden" value="{{ data['did'] }}" name="h1" id="h1">
+          <td><input type="text" value="{{ data['name'] }}" name="textfield" id="textfield" class="form-control" required></td>
+
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><label for="textfield2"></label>
+        <input type="text" value="{{ data['email'] }}" name="textfield2" id="textfield2" class="form-control" required /></td>
+      </tr>
+      <tr>
+        <td>Phone Number</td>
+        <td><label for="textfield3"></label>
+        <input type="text" value="{{ data['phone_number'] }}" name="textfield3" id="textfield3" class="form-control" required /></td>
+      </tr>
+      <tr>
+        <td>Place</td>
+        <td><label for="textfield3"></label>
+        <input type="text" value="{{ data['place'] }}" name="place" id="textfield3" class="form-control" required/></td>
+      </tr>
+
+      <tr>
+        <td>Post</td>
+        <td><label for="textfield4"></label>
+        <input type="text" value="{{ data['post'] }}" name="textfield4" id="textfield4" class="form-control" required/></td>
+      </tr>
+      <tr>
+        <td>Pin</td>
+        <td><label for="textfield5"></label>
+        <input type="text" value="{{ data['pin'] }}" name="textfield5" id="textfield5" class="form-control" required/></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td><label for="textfield6"></label>
+        <input type="text" value="{{ data['age'] }}" name="textfield6" id="textfield6" class="form-control" required/></td>
+      </tr>
+       <tr>
+        <td>Licence Number</td>
+        <td><label for="lic"></label>
+        <input type="text" value="{{ data['license_number'] }}" name="lic" id="textfield3" class="form-control" required/></td>
+      </tr>
+      <tr>
+        <td>BUS</td>
+        <td><select class="form-control" required name="textfield7" >
+            <option value="{{ data['bid'] }}">{{ data['bus_number'] }}</option>
+            {% for i in data1 %}
+                <option value="{{ i['bid'] }}">{{ i['bus_number'] }}</option>
+            {% endfor %}
+        </select>
+
+        </td>
+      </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input class="btn btn-success" type="submit" name="button" id="button" value="edit" /></td>
+      </tr>
+  </table>
+</div>
+<p align="center">&nbsp;</p>
+<div align="center"></div>
+</form>
+</body>
+
+{% endblock %}

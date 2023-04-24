@@ -1,0 +1,31 @@
+
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/admin_payment_post">
+<h3 align="center"> PAYMENT NOTIFICATION  </h3>
+  <div align="center">
+    <table class="table table-bordered" width="200" border="1">
+      <tr>
+        <td>Last Date</td>
+          <td><label for="textfield"></label>
+        <input type="text" name="textfield" id="textfield" /></td>
+      </tr>
+{#      <tr>#}
+{#        <td>fees</td>#}
+{#          <td><label for="textfield2"></label>#}
+{#        <input type="text" name="textfield2" id="textfield2" /></td>#}
+{#        <td>&nbsp;</td>#}
+{#      </tr>#}
+      <tr>
+        <td>&nbsp;</td>
+        <td><input class="btn btn-success" type="submit" name="button" id="button" value="send" /></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+
+{% endblock %}

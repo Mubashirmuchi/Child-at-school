@@ -1,0 +1,43 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<h3 align="center">VIEW PARENT</h3>
+  <div align="center">
+    <table width="266" border="0" class="table table-hover">
+      <tr></tr>
+      <tr></tr>
+      <tr>
+        <td>Sl No</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone Number</td>
+        <td>Job</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+          <td></td>
+      </tr>
+
+        {% for i in data %}
+
+
+      <tr>
+        <td>&nbsp;{{ loop.index }}</td>
+        <td>{{ i['p_name'] }}&nbsp;</td>
+        <td>{{ i['email'] }}&nbsp;</td>
+        <td>&nbsp;{{ i['phone'] }}</td>
+        <td>&nbsp;{{ i['job'] }}</td>
+
+        <td><a href="/admin_add_student/{{ i['parent_id'] }}" class="btn btn-primary">Add Child</a></td>
+          <td><a href="/admin_view_student/{{ i['parent_id'] }}" class="btn btn-info">View Child</a> </td>
+        <td><a href="/admin_delete_parent/{{ i['parent_id'] }}" class="btn btn-danger" onclick="return confirm('are you sure')">delete</a></td>
+      </tr>
+
+        {% endfor %}
+    </table>
+  </div>
+</form>
+</body>
+
+{% endblock %}

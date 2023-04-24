@@ -1,0 +1,35 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<h3 align="center"> VIEW STUDENT BUS  </h3>
+  <div align="center">
+    <table width="200" border="0" class="table table-hover">
+      <tr>
+        <td>Sl No</td>
+        <td>Student Name</td>
+        <td>Class and Division</td>
+        <td>Bus Number</td>
+          <td>Bus Fees</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>    
+        </tr>
+        {% for i in data %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ i['name'] }}</td>
+        <td>{{ i['class'] }}-{{ i['division'] }}</td>
+        <td>{{ i['bus_number'] }}</td>
+          <td>{{ i['fees'] }}</td>
+{#        <td><a href="/admin_edit_allocation" class="btn btn-primary">edit</a></td>#}
+        <td><a href="/admin_delete_aqllocation/{{ i['aid'] }}" class="btn btn-danger" onclick="return confirm('are you sure')">delete</a></td>
+        
+      </tr>
+        {% endfor %}
+    </table>
+  </div>
+</form>
+</body>
+
+{% endblock %}

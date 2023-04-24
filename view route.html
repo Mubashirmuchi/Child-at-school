@@ -1,0 +1,29 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<h3 align="center"> VIEW ROUTE  </h3>
+  <div align="center">
+    <table width="200" border="0" class="table table-hover">
+      <tr>
+        <td>s_no</td>
+        <td>FROM ROUTE</td>
+        <td>TO ROUTE</td>
+        <td>&nbsp;</td>
+      </tr>
+        {% for i in data %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ i['from'] }}</td>
+        <td>{{ i['to'] }}</td>
+        <td><a href="/delete_route/{{ i['route_id'] }}" class="btn btn-danger" onclick="return confirm('are you sure')">DELETE</a></td>
+      </tr>
+        {% endfor %}
+    </table>
+  </div>
+</form>
+</body>
+
+{% endblock %}

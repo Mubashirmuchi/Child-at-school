@@ -1,0 +1,95 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<body>
+<form action="/admin_add_student_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<h3 align="center"> STUDENT  </h3>
+<div align="center">
+  <table class="table table-bordered" width="259" border="1">
+    <tr></tr>
+    <tr>
+        <input type="text" name="p_id" id="textfield18" value="{{ data }}" hidden/>
+      <td width="153">Student Name</td>
+      <td width="90"><label for="textfield14"></label>
+        <input type="text" name="textfield" id="textfield14"/></td>
+    </tr>
+    <tr>
+      <td>Class</td>
+      <td><label for="select"></label>
+        <select name="select" id="select">
+            <option value="lkg">LKG</option>
+            <option value="ukg">UKG</option>
+            <option value="ist">1St</option>
+            <option value="2nd">2nd</option>
+            <option value="3rd">3rd</option>
+
+        </select></td>
+    </tr>
+    <tr>
+      <td>Division</td>
+      <td>
+        <label for="select2"></label>
+        <select name="dvsn" id="select2">
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><input type="radio" name="radio" id="radio" value="MALE" />
+        <label for="textfield16"></label>
+        Male
+        <input type="radio" name="radio" id="radio2" value="FEMALE" />
+        Female</td>
+    </tr>
+    <tr>
+      <td>Blood Group</td>
+      <td><label for="select3"></label>
+        <select name="select3" id="select3">
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label for="textfield18"></label>
+        <input type="text" name="textfield5" id="textfield18" /></td>
+    </tr>
+    <tr>
+        <td>Post</td>
+        <label for="textfield19"></label></td>
+      <td><label for="textfield19"></label>
+        <input type="text" name="textfield6" id="textfield19" /></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><label for="textfield18"></label>
+        <input type="text" name="textfield7" id="textfield18" /></td>
+    </tr>
+    <tr>
+      <td>Rfid No</td>
+      <td><label for="textfield18"></label>
+        <input type="text" name="textfield8" id="textfield18" /></td>
+    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr>
+      <td>Photo</td>
+      <td><label for="browse"></label>
+        <input type="file" name="browse" id="browse" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input class="btn btn-success" type="submit" name="button" id="button" value="add" /></td>
+    </tr>
+  </table>
+</div>
+<p align="center">&nbsp;</p>
+  <div align="center"></div>
+</form>
+</body>
+
+{% endblock %}

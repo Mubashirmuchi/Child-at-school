@@ -1,0 +1,71 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/admin_add_driver_post">
+<h3 align="center">  DRIVER<td width="124"><label for="textfield"></label></td></h3>
+  <div align="center">
+ 
+    <table width="314" border="0" class="table table-hover" align="center">
+      <tr>
+        <td width="174">Name</td>
+          <td><input type="text" name="textfield" id="textfield" class="form-control" required></td>
+
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><label for="textfield2"></label>
+        <input type="email" name="textfield2" id="textfield2" class="form-control" required/></td>
+      </tr>
+      <tr>
+        <td>Phone Number</td>
+        <td><label for="textfield3"></label>
+        <input type="text" name="textfield3" id="textfield3" class="form-control" required pattern="[6789]{1}[0-9]{9}" maxlength="10" /></td>
+      </tr>
+      <tr>
+        <td>Place</td>
+        <td><label for="textfield3"></label>
+        <input type="text" name="place" id="textfield3" /></td>
+      </tr>
+       
+      <tr>
+        <td>Post</td>
+        <td><label for="textfield4"></label>
+        <input type="text" name="textfield4" id="textfield4" /></td>
+      </tr>
+      <tr>
+        <td>Pin</td>
+        <td><label for="textfield5"></label>
+        <input type="text" name="textfield5" id="textfield5" /></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td><label for="textfield6"></label>
+        <input type="text" name="textfield6" id="textfield6" /></td>
+      </tr>
+       <tr>
+        <td>Licence Number</td>
+        <td><label for="lic"></label>
+        <input type="text" name="lic" id="textfield3" /></td>
+      </tr>
+      <tr>
+        <td>BUS</td>
+        <td><select name="textfield7" >
+            <option></option>
+            {% for i in data %}
+                <option value="{{ i['bid'] }}">{{ i['bus_number'] }}</option>
+            {% endfor %}
+        </select>
+
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" name="button" id="button" value="add" class="btn btn-primary"/></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+
+{% endblock %}

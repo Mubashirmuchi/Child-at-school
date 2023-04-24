@@ -1,0 +1,34 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/admin_add_parent_post">
+<h3 align="center">PARENT</h3>
+  <p align="center">&nbsp;</p>
+  <div align="center">
+    <table width="200" border="0" class="table table-hover">
+      <tr>
+        <td>Name</td>
+        <td><input type="text" name="textfield" id="textfield" required /></td>
+      </tr>
+      <tr>
+        <td>Phone Number</td>
+        <td><input type="text" name="textfield2" id="textfield2"  required/></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="text" name="textfield3" id="textfield3" required/></td>
+      </tr>
+      <tr>
+        <td>Job</td>
+        <td><input type="text" name="textfield4" id="textfield4" required/></td>
+      </tr>
+      <tr align="center">
+        <td><input type="submit" name="button" id="button" value="Submit" class="btn btn-primary"/></td>
+      </tr>
+    </table>
+  </div>
+  <p align="center">&nbsp;</p>
+</form>
+</body>
+
+{% endblock %}

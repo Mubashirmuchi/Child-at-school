@@ -1,0 +1,50 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/admin_allocation_post">
+<h3 align="center"> STUDENT BUS </h3>
+  <div align="center">
+    <table width="261" border="0" class="table table-hover">
+      <tr>
+        <td>Student Name</td>
+       <td><select name="select" >
+            <option></option>
+            {% for i in data1 %}
+                <option value="{{ i['sid'] }}">{{ i['name'] }} {{ i['class'] }}-{{ i['division'] }}</option>
+            {% endfor %}
+        </select>
+
+        </td>
+      </tr>
+
+      <tr>
+        <td>Bus Number</td>
+        <td><select name="select2" >
+            <option></option>
+            {% for i in data %}
+                <option value="{{ i['bid'] }}">{{ i['bus_number'] }}</option>
+            {% endfor %}
+        </select>
+
+        </td>
+      </tr>
+       <tr>
+        <td>Bus Fees</td>
+       <td><label for="textfield1"></label>
+        <input type="text" name="textfield1" id="textfield1" /></td>
+
+        </td>
+      </tr>
+      
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" name="button" id="button" value="add" class="btn btn-primary"/></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+
+{% endblock %}

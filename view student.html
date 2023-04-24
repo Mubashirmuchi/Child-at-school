@@ -1,0 +1,64 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+
+<body>
+<form action="/admin_view_student_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<h3 align="center"> VIEW STUDENT  </h3>
+  <div align="center">
+    <table  class="table table-hover">
+{#      <tr>#}
+{#        <td height="60">student name</td>#}
+{#        <td><label for="textfield"></label>#}
+{#        <td><input type="text" name="textfield" id="textfield" placeholder="Search here by Student" /></td>#}
+{#        #}
+{#        <td>class</td>#}
+{#        <td><label for="textfield">#}
+{#          <select name="select2" id="select2">#}
+{#          </select>#}
+{#        </label></td>#}
+{#         <td>division</td>#}
+{#          <td><select name="select" id="select">#}
+{#          </select></td>#}
+{#        <td><input type="submit" name="button" id="button" value="search" class="btn btn-success"/></td>#}
+{#      </tr>#}
+      <tr>
+        <td>Sl No</td>
+        <td>Name</td>
+        <td>Class</td>
+        <td>Division</td>
+          <td>Gender</td>
+        <td>Blood Group</td>
+        <td>Place</td>
+        <td>Post</td>
+        <td>District</td>
+        <td>Rfid No</td>
+        <td>Photo</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+        {% for i in data %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ i['name'] }}</td>
+        <td>{{ i['class'] }}</td>
+        <td>{{ i['division'] }}</td>
+        <td>{{ i['gender'] }}</td>
+        <td>{{ i['blood_group'] }}</td>
+        <td>{{ i['place'] }}</td>
+        <td>{{ i['post'] }}</td>
+        <td>{{ i['district'] }}</td>
+          <td>{{ i['pin'] }}</td>
+        <td><img src="{{ i['photo'] }}" width="100px"height="100px"></td>
+
+        <td><a href="/admin_edit_student/{{ i['sid'] }}" class="btn btn-info">edit</a></td>
+        <td><a href="/admin_delete_student/{{ i['sid'] }}" class="btn btn-danger" onclick="return confirm('Are You Sure?')">delete</a></td>
+        <td><a href="/admin_view_entries/{{ i['sid'] }}" class="btn btn-success">Entries</a></td>
+      </tr>
+        {% endfor %}
+    </table>
+  </div>
+</form>
+</body>
+
+{% endblock %}

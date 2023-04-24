@@ -1,0 +1,32 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+
+<body>
+{#<form id="form1" name="form1" method="post" action="/admin_add_bus_post">#}
+{#  <label for="textfield2"></label>#}
+{#</form>#}
+<form id="form2" name="form2" method="post" action="/add_route_post">
+<h3 align="center"> BUS </h3>
+  <div align="center">
+    <table width="200" border="0" class="table table-hover">
+      <tr>
+        <td>From</td>
+        <td><label for="textfield"></label>
+        <input type="text" name="textfield" id="textfield" class="form-control" required /></td>
+      </tr>
+      <tr>
+        <td>To</td>
+        <td><label for="textfield3"></label>
+        <input type="text" name="textfield2" id="textfield3" class="form-control" required/></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" name="button" id="button" value="add" class="btn btn-primary"/></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

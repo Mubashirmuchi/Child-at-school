@@ -1,0 +1,49 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+
+<body>
+
+
+<form method="post" action="/admin_edit_bus_post">
+<h3 align="center"> EDIT BUS  </h3>
+<div align="center">
+  <table class="table table-bordered" width="200" border="1">
+    <tr>
+        <td>Bus Number</td>
+           <td>  <input type="hidden" name="h1" value="{{ data['bid'] }}" id="h1" />
+        <input type="text" name="textfield" value="{{ data['bus_number'] }}" id="textfield" class="form-control" required/></td>
+      </tr>
+      <tr>
+        <td><p>Registration Number</p></td>
+        <td><label for="textfield3"></label>
+        <input type="text" value="{{ data['chasis_number'] }}" name="textfield2" id="textfield3" class="form-control" required/></td>
+      </tr>
+      <tr>
+        <td>Model</td>
+        <td><label for="textfield4"></label>
+        <input type="text" value="{{ data['model'] }}" name="textfield3" id="textfield4" class="form-control" required/></td>
+      </tr>
+      <tr>
+        <td>Destination</td>
+        <td><label for="textfield5"></label>
+        <input type="text" value="{{ data['destination'] }}" name="textfield4" id="textfield5" class="form-control" required/></td>
+      </tr>
+      <tr>
+        <td>Route</td>
+        <td><select name="select">
+            {% for i in route %}
+            <option {% if data['route_id']==i['route_id'] %}selected{% endif %} value="{{ i['route_id']}}">FROM:{{ i['from'] }}&nbsp;TO:{{ i['to'] }}</option>
+            {% endfor %}
+        </select></td>
+      </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input class="btn btn-success" type="submit" name="button" id="button" value="edit" class="form-control" required/></td>
+    </tr>
+  </table>
+</div>
+</form>
+</body>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+
+<body>
+{#<form id="form1" name="form1" method="post" action="/admin_add_bus_post">#}
+{#  <label for="textfield2"></label>#}
+{#</form>#}
+<form id="form2" name="form2" method="post" action="/add_route_point_post">
+<h3 align="center"> ROUTE POINT </h3>
+  <div align="center">
+    <table width="200" border="0" class="table table-hover">
+      <tr>
+        <td>Route</td>
+        <td><select name="select">
+            {% for i in data %}
+            <option value="{{ i['route_id']}}">{{ i['from'],i['to'] }}</option>
+            {% endfor %}
+        </select></td>
+      </tr>
+      <tr>
+        <td>Route POint</td>
+        <td>
+        <input type="text" name="textfield2" id="textfield3" class="form-control" required/></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" name="button" id="button" value="add" class="btn btn-primary"/></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<h3 align="center"> VIEW DRIVER </h3>
+  <div align="center">
+    <table class="table table-hover">
+      <tr>
+        <td>Sl No</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone Number</td>
+{#          <td>district</td>#}
+          <td>Place</td>
+        <td>Post</td>
+        <td>Pin</td>
+        <td>Age</td>
+        <td>Licence Number</td>
+        <td>Bus Number</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+        {% for i in data %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ i['name'] }}</td>
+        <td>{{ i['email'] }}</td>
+        <td>{{ i['phone_number'] }}</td>
+{#        <td>{{ i[''] }}</td>#}
+        <td>{{ i['place'] }}</td>
+        <td>{{ i['post'] }}</td>
+        <td>{{ i['pin'] }}</td>
+        <td>{{ i['age'] }}</td>
+          <td>{{ i['license_number'] }}</td>
+          <td>{{ i['bus_number'] }}</td>
+        <td><a href="/adm_edit_driver/{{ i['did'] }}" class="btn btn-primary">edit</a></td>
+        <td><a href="/admin_delete_driver/{{ i['did'] }}" class="btn btn-danger" onclick="return confirm('are you sure')">delete</a></td>
+      </tr>
+        {% endfor %}
+    </table>
+  </div>
+</form>
+</body>
+
+{% endblock %}

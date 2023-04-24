@@ -1,0 +1,30 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+
+<body>
+<h3 align="center"> REPLY  </h3>
+<form id="form1" name="form1" method="post" action="/admin_reply_post">
+
+<div align="center">
+  <table>
+    <tr>
+      <td>Reply</td>
+        <td>
+        <label for="textarea"></label>
+        <input type="hidden" name="id" value="{{ d1 }}">
+        <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+        <input type="submit" name="button" id="button" value="Submit" />
+      </td>
+    </tr>
+  </table>
+</div>
+    </form>
+</body>
+
+{% endblock %}

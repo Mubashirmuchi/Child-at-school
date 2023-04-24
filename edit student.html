@@ -1,0 +1,99 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/admin_edit_student_post" enctype="multipart/form-data">
+<h3 align="center">EDIT STUDENT</h3>
+<div align="center">
+  <table class="table table-bordered">
+    <tr>
+        <td align="center" colspan="2"><img src="{{ data['photo'] }}" width="100px" height="100px"></td>
+    </tr>
+    <tr>
+
+      <td>Student Name</td>
+      <td><label for="textfield14"></label>
+        <input type="hidden" name="p_id" id="textfield18" value="{{ data["sid"] }}">
+        <input type="text" class="form-control" required name="textfield" id="textfield14" value="{{ data['name']}}"/></td>
+    </tr>
+    <tr>
+      <td>Class</td>
+      <td><label for="select"></label>
+        <select class="form-control" required name="select" id="select">
+            <option value="lkg" {% if data['class']=="lkg" %} selected {% endif %}>LKG</option>
+            <option value="ukg" {% if data['class']=="ukg" %} selected {% endif %}>UKG</option>
+            <option value="1st" {% if data['class']=="1st" %} selected {% endif %}>1St</option>
+            <option value="2nd" {% if data['class']=="2nd" %} selected {% endif %}>2nd</option>
+            <option value="3rd" {% if data['class']=="3rd" %} selected {% endif %}>3rd</option>
+
+        </select></td>
+    </tr>
+    <tr>
+      <td>Division</td>
+      <td>
+        <label for="select2"></label>
+        <select class="form-control" required name="select2" id="select2">
+              <option value="A"{% if data['division']=="A" %} selected {% endif %}>A</option>
+              <option value="B"{% if data['division']=="B" %} selected {% endif %}>B</option>
+              <option value="C"{% if data['division']=="C" %} selected {% endif %}>C</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><input type="radio" name="radio" id="radio" value="male"{% if data['gender']=="male" %} checked {% endif %}  />
+          Male
+        <input type="radio" name="radio" id="radio2" value="female"{% if data['gender']=="female" %} checked {% endif %} />
+        Female</td>
+    </tr>
+    <tr>
+      <td>Blood Group</td>
+      <td><label for="select3"></label>
+        <select class="form-control" required name="select3" id="select3">
+              <option value="A+" {% if data['bloodgroup']=="A+" %} selected {% endif %}>A+</option>
+              <option value="A-" {% if data['blood_group']=="A-" %} selected {% endif %}>A-</option>
+              <option value="B+" {% if data['blood_group']=="B+" %} selected {% endif %}>B+</option>
+              <option value="B-" {% if data['blood_group']=="B-" %} selected {% endif %}>B-</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label for="textfield18"></label>
+        <input class="form-control" required type="text" name="textfield5" id="textfield18" value="{{ data['place'] }}"/></td>
+    </tr>
+    <tr>
+        <td>Post</td>
+        <label for="textfield19"></label></td>
+      <td><label for="textfield19"></label>
+        <input class="form-control" required type="text" name="textfield6" id="textfield19" value="{{ data['post'] }}" /></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><label for="textfield18"></label>
+        <input class="form-control" required type="text" name="textfield7" id="textfield18" value="{{ data['district'] }}"/></td>
+    </tr>
+    <tr>
+      <td>Pin</td>
+      <td><label for="textfield18"></label>
+        <input class="form-control" required type="text" name="textfield8" id="textfield18" value="{{ data['pin'] }}"/></td>
+    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr>
+      <td>Photo</td>
+      <td><label for="browse"></label>
+
+        <input type="file" name="browse" id="browse" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input class="btn btn-success" type="submit" name="button" id="button" value="edit" /></td>
+      </tr>
+  </table>
+</div>
+<p align="center">&nbsp;</p>
+
+</form>
+</body>
+
+{% endblock %}
